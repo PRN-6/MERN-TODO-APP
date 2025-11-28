@@ -6,9 +6,9 @@ export async function getTodo (req , res){
 }
 
 export async function createTodo (req , res){
-    const {text} = req.body()
-    const todo = await todo.create({text})
-    res.json(todo);
+    const {text} = req.body
+    const newTodo = await todo.create({text})
+    res.json(newTodo);
 }
 
 export async function updateTodo (req , res){
