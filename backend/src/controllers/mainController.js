@@ -1,8 +1,14 @@
 import todo from "../models/todoModel.js";
 
 export async function getTodo (req , res){
-    const todos = await todo.find()
-    res.json(todos); 
+    try {
+        const todos = await todo.find()
+        console.log("Fetched todos:", todos)
+        res.json(todos)
+    } catch (error) {
+        console.log("Error fetching todos:", error)
+        res.status(500).json({message: "Error fetching todos", error})
+    }
 }
 
 export async function createTodo (req , res){
