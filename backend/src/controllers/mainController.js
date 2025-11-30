@@ -18,8 +18,8 @@ export async function createTodo (req , res){
 }
 
 export async function updateTodo (req , res){
-    const todo = await todo.findByIdAndUpdate(req.params.id, req.body,{new : true})
-    res.json(todo);
+    const updatedTodo = await todo.findByIdAndUpdate(req.params.id, req.body,{new : true})
+    res.json(updatedTodo);
 }
 
 export async function deleteTodo ( req , res){
